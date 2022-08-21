@@ -1,0 +1,103 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Code */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: lightgray;
+}
+
+h1 {
+    margin: 3rem 0;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+button {
+    display: block;
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.25s;
+}
+
+button:hover {
+    scale: 1.1;
+}
+
+#container {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.selectors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.grid-size {
+    text-align: center;
+    font-size: 1.4rem;
+    position: relative;
+    top: 1rem;
+}
+
+.grid-container {
+    width: 640px;
+    height: 640px;
+    display: grid;
+    background-color: white;
+}

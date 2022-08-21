@@ -5,22 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Etch-a-sketch</h1>
     <div id="container">
         <div class="selectors-container">
-            <button class="color">Color mode</button>
-            <button class="rainbow">Rainbow mode</button>
-            <button class="erase">Eraser</button>
-            <button class="clear">Clear</button>
+            <button class="color-button">Color mode</button>
+            <button class="rainbow-button">Rainbow mode</button>
+            <button class="erase-button">Eraser</button>
+            <button class="clear-button">Clear</button>
             <div class="grid-size">16 x 16</div>
             <input class="grid-range" type="range" name="range" id="range"
              min="1" max="64" value="16" step="1">
         </div>
         <div class="grid-container">
-            
+
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
