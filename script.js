@@ -9,6 +9,14 @@ const clearButton = document.querySelector('.clear-button');
 
 let currentButton = '';
 
+let mouseDown = false;
+document.body.onmousedown = () => {
+    mouseDown = true;
+}
+document.body.onmouseup = () => {
+    mouseDown = false;
+}
+
 range.addEventListener('change', () => {
     clearGrid();
     changeGridDimensionsText(range.value);
@@ -27,9 +35,10 @@ eraseButton.addEventListener('click', () => {
     activeButton(eraseButton);
 });
 
-// clearButton.addEventListener('click', () => {
-
-// });
+clearButton.addEventListener('click', () => {
+    clearGrid();
+    createGrid(range.value);
+});
 
 function clearGrid() {
     gridContainer.textContent = '';
@@ -45,15 +54,18 @@ function createGrid(dim) {
     for(let i = 0; i < dim * dim; i++) {
         const gridElement = document.createElement('div');
         gridContainer.appendChild(gridElement);
-        gridElement.addEventListener('mousedown', () => {
-            if (currentButton === 'color') {
-                gridElement.style.backgroundColor = color();
-            }
-            if (currentButton === 'rainbow') {
-                gridElement.style.backgroundColor = rainbow();
-            }
-            if (currentButton === 'erase') {
-                gridElement.style.backgroundColor = erase();
+        gridElement.addEventListener('mouseover', (e) => {
+            if (mouseDown)
+            {
+                if (currentButton === 'color') {
+                    gridElement.style.backgroundColor = color();
+                }
+                if (currentButton === 'rainbow') {
+                    gridElement.style.backgroundColor = rainbow();
+                }
+                if (currentButton === 'erase') {
+                    gridElement.style.backgroundColor = erase();
+                }
             }
         });
     }
