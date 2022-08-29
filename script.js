@@ -88,7 +88,7 @@ function rainbow() {
     let R = Math.floor(Math.random() * 255);
     let G = Math.floor(Math.random() * 255);
     let B = Math.floor(Math.random() * 255);
-    gridElement.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+    return `rgb(${R}, ${G}, ${B})`;
 }
 
 // function erase() {
