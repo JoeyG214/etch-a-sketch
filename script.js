@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const range = document.querySelector('#range');
 const gridSize = document.querySelector('.grid-size');
+const colorPicker = document.querySelector('#color-picker');
 const colorButton = document.querySelector('.color-button');
 const rainbowButton = document.querySelector('.rainbow-button');
 const eraseButton = document.querySelector('.erase-button');
@@ -43,7 +44,6 @@ function createGrid(dim) {
     gridContainer.style.gridTemplateColumns = `repeat(${dim}, 1fr)`;
     for(let i = 0; i < dim * dim; i++) {
         const gridElement = document.createElement('div');
-        gridElement.classList.add('grid-item'); //REMOVE LATER
         gridContainer.appendChild(gridElement);
         gridElement.addEventListener('mousedown', () => {
             if (currentButton === 'color') {
@@ -80,9 +80,9 @@ function activeButton(selectedButton) {
     }
 }
 
-// function color() {
-
-// }
+function color() {
+    return `${colorPicker.value}`;
+}
 
 function rainbow() {
     let R = Math.floor(Math.random() * 255);
@@ -91,12 +91,10 @@ function rainbow() {
     return `rgb(${R}, ${G}, ${B})`;
 }
 
-// function erase() {
-
-// }
+function erase() {
+    return '';
+}
 
 createGrid(range.value);
 activeButton(colorButton);
-
-
 
