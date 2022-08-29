@@ -44,8 +44,18 @@ function createGrid(dim) {
     for(let i = 0; i < dim * dim; i++) {
         const gridElement = document.createElement('div');
         gridElement.classList.add('grid-item'); //REMOVE LATER
-        gridElement.addEventListener('mousedown', changeColor());
         gridContainer.appendChild(gridElement);
+        gridElement.addEventListener('mousedown', () => {
+            if (currentButton === 'color') {
+                gridElement.style.backgroundColor = color();
+            }
+            if (currentButton === 'rainbow') {
+                gridElement.style.backgroundColor = rainbow();
+            }
+            if (currentButton === 'erase') {
+                gridElement.style.backgroundColor = erase();
+            }
+        });
     }
 }
 
@@ -70,34 +80,23 @@ function activeButton(selectedButton) {
     }
 }
 
-function changeColor() {
-    if (currentButton === 'color') {
-        color();
-    }
-    if (currentButton === 'rainbow') {
-        rainbow();
-    }
-    if (currentButton === 'erase') {
-        erase();
-    }
-}
 // function color() {
 
 // }
 
-// function rainbow() {
-//     let R = Math.floor(Math.random() * 255);
-//     let G = Math.floor(Math.random() * 255);
-//     let B = Math.floor(Math.random() * 255);
-//     gridElement.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
-// }
+function rainbow() {
+    let R = Math.floor(Math.random() * 255);
+    let G = Math.floor(Math.random() * 255);
+    let B = Math.floor(Math.random() * 255);
+    gridElement.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+}
 
 // function erase() {
 
 // }
 
 createGrid(range.value);
-
+activeButton(colorButton);
 
 
 
